@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "6c6f84817b6e9a05",
+    "type": "split",
+    "children": [
+      {
+        "id": "2cc62c3e96e3221b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "OAuth grant types.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5aecc9635338b421",
+    "type": "split",
+    "children": [
+      {
+        "id": "38fcec4768e66166",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e74483d6d479f09b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "997133e202b0bd8d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "e554077e136dbd0d",
+    "type": "split",
+    "children": [
+      {
+        "id": "25d3df1a3026da69",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2b8885cc9dcfb1c6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "OAuth grant types.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "2cc62c3e96e3221b",
+  "lastOpenFiles": [
+    "OAuth grant types.md",
+    "OAuth 2.0 authentication vulnerabilities.md",
+    "Untitled.md"
+  ]
+}
