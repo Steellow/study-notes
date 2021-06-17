@@ -1,4 +1,4 @@
-<-- [[OAuth 2.0 authentication vulnerabilities]]
+<-- [[OAuth 2.0 authentication vulnerabilities]]  
 🌍 https://portswigger.net/web-security/oauth/grant-types
 # OAuth grant types
 ## What is an OAuth grant type?
@@ -57,4 +57,56 @@ Long version:
 		- Aka. "callback URI" or "callback endpoint"
 		- Many OAuth attacks are based on this
 	- `response_type`
-		- 
+		- Determines which kind of response client is expecting
+			- Meaning, which flow it wants to initiate
+			- For authorization code grant type, the value is `code`
+	- `scope`
+		- Determines which user data the client wants
+		- There can be custom scopes by OAuth provider or standard scopes by [[OpenID Connect]] specification
+	- `state`
+		- Stores unique, unguessable value that is tied to current session of client
+		- OAuth service should return this value, with auth code
+		- This parameter serves as a form of [[CSRF token]]
+
+### 2. User login and consent
+- When auth server receives the initial req, it will redirect user to login page
+- User will be listed of data the client wants to access
+	- This is bvased on the scope
+- Once the user has approved given scope, this step will be automatic as long as the user has valid session with OAuth service
+
+### 3. Authorization code grant
+- Browser will be redirected to what was specified in the `redirect_uri`
+- The resulting `GET` req will contain the auth code
+	- Depending on the conf, might also include `state` parameter
+
+### 4. Access token request
+- Once the client gets the auth code, it needs to exchange it for an access token
+- To do this, it send server-2-server `POST` req to OAuth service's `/token` endpoint
+	- All communication from this piont takes place in secure back-channgel
+		- Therefore, can't (usually) be observed or controller by attacker
+- `client_id=12345&client_secret=SECRET&redirect_uri=https://client-app.com/callback&grant_type=authorization_code&code=a1b2c3d4e5f6g7h8`
+	- Two new parameters
+		- `client_secret`: Client must authenticate itself with secret key it got from registering with OAuth service
+		- `grant_type`: Used to make sure the new endpoint knows which grant type the client wants to use. In this case, it's `authorization_code`
+
+### 5. Access token grant
+- OAuth service will validate the access token request
+- If everything is ok, the server respons by granting the client an access token with the requested scope
+```
+{  
+ "access\_token": "z0y9x8w7v6u5",  
+ "token\_type": "Bearer",  
+ "expires\_in": 3600,  
+ "scope": "openid profile",  
+ …  
+}
+```
+
+### 6. API call
+- Now the client can fetch user's data with API calls
+- The access token is submitted in `Authorization: Bearer` header
+
+### 7. Resource grant
+- The server validates the token, and responds with requested data
+
+# Implicit grant type
