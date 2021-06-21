@@ -36,4 +36,18 @@
             4.  Client app uses the access token to make API calls to the resource server
 
 > 📃 [[OAuth grant types]]
+
 ### OAuth authentication
+- OAuth is also used for athenticating users
+	- Not originally for this purpose
+- If you see social media login button, it's mostly likely built on OAuth 2.0
+- Basic OAuth flows are largely the same
+	- Main difference is how the client uses the data
+- From end-user perspective, result of OAuth is resembles SAML-based single sign-on (SSO)
+	- In this course, focus is exclusively on vulnerabilities on SSO-like use cases
+- OAuth is generally implemented like this:
+	1. Use chooses to log in with social media. Client uses the social media's OAuth service tto request some data (like email) to identify the user
+	2. After receiving access token, client requests data from resource server (usually `/userinfo` endpoint)
+	3. Client uses the received data as username to log in the user. Access token is used instead of traditional password
+
+> 🧪 [[Lab - Authentication bypass via OAuth implicit flow]]

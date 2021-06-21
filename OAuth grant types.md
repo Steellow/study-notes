@@ -110,3 +110,36 @@ Long version:
 - The server validates the token, and responds with requested data
 
 # Implicit grant type
+- Much simpler one
+- Instead of exchanching auth code for access token, client immediately gets access token after user has give consent
+- Why clients don't always use implicit grant type?
+	- It's far less secure
+		- All communication happens via browser redirects
+		- No secure back-channel
+		- = access token and user's data are more exposed to attacks
+- More suited for single-page apps and native desktop apps
+	- They can't easily store `client_secret` on the backend
+		- Don't benefit as much from authorization code grant type
+![Flow for the OAuth implicit grant type](https://portswigger.net/web-security/images/oauth-implicit-flow.jpg)
+
+### 1. Authorization request
+- Starts almost the same way as authorization code flow
+- Difference: `response_type` parameter must be `token`
+- `GET /authorization?client\_id=12345&redirect\_uri=https://client-app.com/callback&response\_type=token&scope=openid%20profile&state=ae13d489bd00e3c24`
+
+### 2. User login an consent
+- Self-explanatory, same as in authorization code flow
+
+### 3. Access token grant
+- This is where things start to differ
+- OAuth service will redirect user's browser to `redirect_uri`
+	- **Instead of sending containing auth vode, it contains accees token and ohet token-specific data as a URL fragment**!
+- `GET /callback#access\_token=z0y9x8w7v6u5&token\_type=Bearer&expires\_in=5000&scope=openid%20profile&state=ae13d489bd00e3c24`
+- The access token is sent in URL fragment, thus client needs some kind of script to parse and store it
+
+### 4. API call
+- Once the access token is extracted, it can be used to make API calls to OAUth service's `/userinfo` endpoint
+- Unlike in authorization code flow, this also happens via browser
+
+### 5. Resource grant
+- Resource server verifies token and respons with requested resource
