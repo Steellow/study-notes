@@ -2,6 +2,9 @@
 # Current studies
 📃 [[OAuth 2.0 authentication vulnerabilities]]
 
-# By category
+# Planning
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/getting-started)
+
+# Archive
 ## Security
 📃 [[OAuth 2.0 authentication vulnerabilities]]

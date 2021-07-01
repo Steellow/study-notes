@@ -9,4 +9,5 @@
 
 ## Notes
 - [Setting up Burp with FoxyProxy](https://blog.nvisium.com/setting-up-burpsuite-with-firefox-and)
-- 
+	- BurpSuite is a proxy = web traffic will be forwarded from browser through Burp
+	- We can see the HTTP req & res, and manipulate it

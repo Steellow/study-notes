@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Lab - Authentication bypass via OAuth implicit flow.md",
-            "mode": "source"
+            "file": "README.md",
+            "mode": "preview"
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lab - Authentication bypass via OAuth implicit flow.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,11 +89,11 @@
   },
   "active": "2cc62c3e96e3221b",
   "lastOpenFiles": [
-    "Lab - Authentication bypass via OAuth implicit flow.md",
+    "README.md",
     "OAuth 2.0 authentication vulnerabilities.md",
+    "Lab - Authentication bypass via OAuth implicit flow.md",
     "Lab; Authentication bypass via OAuth implicit flow.md",
     "OAuth grant types.md",
-    "README.md",
     "Studies.md",
     "Untitled.md",
     "CSRF token.md"
