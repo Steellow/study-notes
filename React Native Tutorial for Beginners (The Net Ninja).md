@@ -93,4 +93,29 @@
 	- Can also specify columns with `numColumns`
 - Difference between this and `map`?
 	- `<FlatList>` only renders those items which are visible
-	- 
+
+
+## 8 - Touchable Components
+- You can't add style prop to `<Button>`
+	- Unlike Touchable widgets
+- How to make regular widgets (Like `<Text>`) pressable?
+	- Wrap with `<TouchableOpacity>`
+		- There are several different Touchable components
+		- Gives fade effect on press
+- If you use `console.log`, you can see the logs in your browser at expo tab
+	- localhost:19002
+	- Select the device from left which logs you want to see
+	- Also can see from the terminal where you ran `npm start`
+- Off-topic TIL: `array.splice` returns array of items which where returned. So you can't use `arr = arr.splice(index, 1)`
+
+
+## 9 - Todo app (part 1)
+- Making todo app, my project name is `hello-world`
+	- Because I'm too lazy to generate another empty app
+- `<SafeAreView>` doesn't work properly, just use `padding` if stuff goes behind status bar
+
+
+## 10 - Todo app (part 2)
+- Nothing interesting here
+
+
