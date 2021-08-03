@@ -119,3 +119,9 @@
 - Nothing interesting here
 
 
+## 11 - Todo app (part 3)
+- Nothing interesting here
+
+---
+
+> ⚠ **Decided to not keep doing this course, since it's way too basic!** 
